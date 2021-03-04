@@ -35,25 +35,24 @@ export const Homepage = () => {
                 </div>         
                 <div className="body">
                     {trendingData.map((eachTrendingData,index) => 
-                        <ProductCard {...eachTrendingData} key={index}
-                        />
+                        <Link to={`/crit/${eachTrendingData.subcategory}/${eachTrendingData.entid}`}  key={index}><ProductCard {...eachTrendingData} /></Link>
                     )}
                 </div>           
             </div>
             {Object.keys(catogorywiseProductList).map(category=>
                 <div className="product-container category-wise" key={category}>
                     <div className="header">
-                        {category}
+                        <Link to={`/crit/${category}`}>{category}</Link>
                     </div>         
                     <div className="body">
                         {
                             Object.keys(catogorywiseProductList[category]).map(subcategory => 
-                                <CategoryProductCard subCategoryName={subcategory} productList={catogorywiseProductList[category][subcategory]} key={subcategory} ></CategoryProductCard>
-                            )
-                        }
-                        
-                    </div>           
-                </div> 
+                                <Link to={`/crit/${category}`} key={subcategory}> 
+                                    <CategoryProductCard subCategoryName={subcategory} productList={catogorywiseProductList[category][subcategory]}/>
+                                </Link>
+                        )}
+                    </div>
+                </div>
             )}
             <div className="product-container">
                 <div className="header">

@@ -11,10 +11,10 @@ export const Search = () => {
             <div className="categories-menu">
                 <span> <span>{searchContext.selectedCategory}</span><BsCaretDownFill/></span>
                 <div className="dropdown-content backdrop-blur">
-                    <a href="/" onClick={() => searchContext.selectCategory("All Categories")}>All Categories</a>
+                    <a onClick={() => searchContext.selectCategory("All Categories")}>All Categories</a>
                     {
                         searchContext.categories.map((category: string[]) =>
-                            <a key={category[1]} href={`/crit/${category[1]}`} onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</a>
+                            <a key={category[1]} onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</a>
                         )
                     }
                 </div>
