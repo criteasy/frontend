@@ -8,7 +8,9 @@ export const CategoryProductCard = memo(({subCategoryName,productList}:{subCateg
 <React.Fragment>
         {productList && productList.length > 0 ?
         <div className="crit-sub-category-background" key={subCategoryName}>
-            <div className="header">{subCategoryName}</div>
+            <Link to={`/crit/${subCategoryName}`}>
+                <div className="header">{subCategoryName}</div>
+            </Link>
             <div className="body">
                 {productList.map(eachProduct => 
                     <Link to={`/crit/${eachProduct.subcategory}/${eachProduct.entid}`}>

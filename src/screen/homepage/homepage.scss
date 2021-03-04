@@ -87,23 +87,10 @@
             font-family: 'Lato', sans-serif;
             font-weight: bolder;
             padding:0 0 0 24px;
-            &>a{
-                text-decoration: none;
-                &:link, &:visited{
-                    color: #000;
-                }
-            }
-
         }
 
        
         &>.body{
-            &>a{
-                text-decoration: none;
-                &:link, &:visited{
-                    color: #000;
-                }
-            }
             padding: 20px 0 30px 0;
             width: 100%;
             display: flex;

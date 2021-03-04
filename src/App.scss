@@ -16,6 +16,12 @@ body{
 box-sizing: border-box;
 
 }
+a{
+  text-decoration: none;
+  &:link, &:visited{
+      color: #000;
+  }
+}
 
 @media (max-width:830px){
     .xl-only{

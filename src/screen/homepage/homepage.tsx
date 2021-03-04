@@ -47,9 +47,9 @@ export const Homepage = () => {
                     <div className="body">
                         {
                             Object.keys(catogorywiseProductList[category]).map(subcategory => 
-                                <Link to={`/crit/${category}`} key={subcategory}> 
-                                    <CategoryProductCard subCategoryName={subcategory} productList={catogorywiseProductList[category][subcategory]}/>
-                                </Link>
+                                // <Link to={`/crit/${category}`} > 
+                                    <CategoryProductCard subCategoryName={subcategory} productList={catogorywiseProductList[category][subcategory]} key={subcategory}/>
+                                // </Link>
                         )}
                     </div>
                 </div>
@@ -60,8 +60,9 @@ export const Homepage = () => {
                 </div>         
                 <div className="body">
                     {recommendedData.map((eachRecommendedData,index) => 
-                        <ProductCard {...eachRecommendedData} key={index}
-                        />
+                        <Link to={`/crit/${eachRecommendedData.subcategory}/${eachRecommendedData.entid}`}  key={index}>
+                            <ProductCard {...eachRecommendedData}/>
+                        </Link>
                     )}
                 </div>           
             </div>            
