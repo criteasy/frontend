@@ -18,9 +18,8 @@
     &>.crit-card-body{
         display: flex;
         justify-content: center;
-
+        background-color: #fff;
         &>img{
-            width: 100%;
             height: 250px;
         }
     }

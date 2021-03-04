@@ -16,7 +16,7 @@ export const CategoryProductCard = memo(({subCategoryName,productList}:{subCateg
                     <Link to={`/crit/${eachProduct.subcategory}/${eachProduct.entid}`}>
                         <div className="crit-sub-category-cards-background" key={eachProduct.entid}>
                             <div className="crit-card-header">{eachProduct.ename}</div>
-                            <div className="crit-card-body"><img alt="not found" src={eachProduct.imageurl}/></div>
+                            <div className="crit-card-body"><img alt="not found" src={eachProduct.imageurl || "asset/imgcomingsoon.png"}/></div>
                             <div className="crit-card-footer backdrod-blur"><div className="card-footer-action">{eachProduct.reviewcount} Reviews</div>
                             <div className="card-footer-action"><span>{eachProduct.rating}/5 </span> <span><BsStarFill/></span></div></div>
                         </div>
