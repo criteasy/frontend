@@ -1,0 +1,35 @@
+.crit-sub-category-bar{
+    background-color: #dadada;
+
+    display: block;
+    justify-content: center;
+    &>ul{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0 20px;
+        align-self: center;
+        flex-flow: row wrap;
+        text-decoration: none;
+        list-style: none;
+
+        width: 100%;
+        &>li {
+            display: flex;
+            &>a{
+                position: relative;
+                padding: 14px 10px;
+
+                &:link{
+                    color: #000;
+                    text-decoration: none;
+                }
+                &:visited {
+                    color: #000;
+                }
+            }
+        }
+
+    }
+}

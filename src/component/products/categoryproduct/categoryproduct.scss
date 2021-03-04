@@ -1,0 +1,17 @@
+.crit-products-list{
+    background-color: #EBECF0;
+    padding: 30px 1rem;
+    &>.crit-products {
+        margin-bottom: 50px;
+        &>.crit-products-container-heading{
+            font-weight: bold;
+            font-size: 1.4em;
+            padding: 20px 0;
+        }
+        &>.crit-products-container-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(16rem,1fr));
+            grid-gap: 1.8rem;
+        }
+    }
+}

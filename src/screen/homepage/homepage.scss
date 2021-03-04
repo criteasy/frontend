@@ -1,0 +1,147 @@
+@import '../../theme.scss';
+
+.crit-home-jumbotron{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #333;
+    // background-size: 200% 200%;
+    // z-index: -1;
+    animation: gridcoloranimation 5s ease-in 0s infinite forwards ;
+    transition: all 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:75px;
+    padding: 10px;
+    &>.crit-search-bar-bg{
+        display: block;
+        width: 950px;
+        &>.categories-menu{
+            color:#fff;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 1px;
+            font-size: 14px;
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            justify-content: space-around;
+            width: 100%;
+            border-radius: 10px;
+            margin: 0px 0 0px 0;
+            &>a{
+                text-decoration: none;
+                &>div{
+                    &:hover{
+                        background-color: #464646fd;
+                        border-radius: 10px ;
+                    }
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding: 25px 20px;
+                    cursor: pointer;
+                }
+                &>.active{
+                    border-bottom: 4px solid rgb(27, 27, 27);
+                    // mix-blend-mode: color-dodge;
+                    padding-bottom: 19px;
+                }
+                &:link, &:visited{
+                    color: #fff;
+                }      
+            }                
+        }
+        &>.crit-search-grp{
+            margin:20px 0;
+            font-size: 14px;
+        }
+    }
+}
+
+
+.card-container{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EBECF0;
+    padding: 10px 100px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    transition: all 0.5s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>.product-container{
+        width: 100%;
+
+        // box-sizing: border-box;
+        display: flex;
+        flex-flow: column wrap;
+        padding: 25px 0 0 0;
+
+        // align-items: stretch;
+        &>.header{
+            font-size: 26px;
+            font-family: 'Lato', sans-serif;
+            font-weight: bolder;
+            padding:0 0 0 24px;
+
+        }
+
+       
+        &>.body{
+            padding: 20px 0 30px 0;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: auto;
+            /* IE and Edge */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+        }
+
+       
+    }
+
+}
+
+
+
+
+@media(max-width:720px){
+    .crit-logo{
+        width: 100vw;
+        padding: 35px 0px !important;
+        margin: 0;
+        justify-content: center;
+    }
+    .card-container{
+        padding: 0px 10px !important;
+        &>.product-container{
+            &>.body{
+                flex-flow: row wrap;
+            }
+        }
+    }
+}
+
+// @keyframes gridcoloranimation{
+//     0% {
+// 		background-position: 0% 50%;
+// 	}
+// 	50% {
+// 		background-position: 50% 50%;
+// 	}
+// 	100% {
+//         background-position: 0% 50%;
+    
+// 	}
+// }
