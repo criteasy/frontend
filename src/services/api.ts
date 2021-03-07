@@ -1,8 +1,9 @@
 import axios from "axios"
 import camelCaseKeys from "camelcase-keys"
+import urlJoin from 'url-join';
 
 export const API =  axios.create({
-    baseURL: `http://localhost/api/v1/`
+  baseURL: urlJoin(process.env.REACT_APP_BASEURL || 'http://localhost', '/api/v1/')
 });
 
 API.interceptors.response.use(
