@@ -3,7 +3,7 @@ import camelCaseKeys from "camelcase-keys"
 import urlJoin from 'url-join';
 
 export const API =  axios.create({
-  baseURL: urlJoin(process.env.REACT_APP_BASEURL || 'http://localhost', '/api/v1/')
+  baseURL: urlJoin(`${process.env.REACT_APP_B_BASEURL}:${process.env.REACT_APP_B_PORT}` || 'http://localhost', '/api/v1/')
 });
 
 API.interceptors.response.use(
