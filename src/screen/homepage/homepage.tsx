@@ -39,10 +39,7 @@ export const Homepage = () => {
                     )}
                 </div>           
             </div>
-            {Object.keys(catogorywiseProductList).filter(category => 
-                Object.keys(catogorywiseProductList[category]).
-                    some(subcategory=>catogorywiseProductList[category][subcategory].length>0))
-                        .map(category=>
+            {Object.keys(catogorywiseProductList).map(category=>
                 <div className="product-container category-wise" key={category}>
                     <div className="header">
                         <Link to={`/crit/${category}`}>{category}</Link>
