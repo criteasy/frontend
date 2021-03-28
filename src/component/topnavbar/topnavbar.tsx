@@ -140,7 +140,10 @@ const styles = StyleSheet.create({
         zIndex: 200,
         overflow: 'auto',
         display: 'none',
-        backdropFilter: 'blur(40px)'
+        backdropFilter: 'blur(40px)',
+        ':hover': {
+            display: 'block'
+        }
     },
     uacSpan: {
         color: 'black',
