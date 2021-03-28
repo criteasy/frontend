@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 import { CategoryProductLists, seperatedCategoryProductLists } from "../../types/categoryproductlist";
 import { HomepageInitData } from "../../types/initialdata";
 import { Product } from "../../types/product";
-import {  API, MockAPI } from "../api"
+import {  API } from "../api"
 import { useCategoryListService } from "../products/products";
 
 const useHomepageApi = () => {
     const [homepageData, setHomepageData] = useState({} as HomepageInitData);
     useEffect(()=>{
-        MockAPI.get("catalog").then((resp: any) => {
+        API.get("catalog/").then((resp: any) => {
             setHomepageData(resp.data);
         })
 
