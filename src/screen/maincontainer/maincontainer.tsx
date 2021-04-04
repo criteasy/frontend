@@ -12,7 +12,7 @@ export const SearchContext = React.createContext({} as any);
 
 export const Maincontainer = memo(({match}:{match:any})=>{
     const [selectedCategory, selectCategory] = useState("All Categories");
-    const [showSearch, setShowSearch] = useState(true)
+    const [showSearch, setShowSearch] = useState(false)
     const [categories] = useCategoryListService();
 
     return <SearchContext.Provider value={{categories, selectedCategory, selectCategory, showSearch, setShowSearch}}>
