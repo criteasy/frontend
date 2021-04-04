@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useProductHook } from '../../../hooks/products/producthooks';
 import { CompactProductCard } from '../../compactproductcard/compactproductcard'
 import { StoreInfo } from '../../storeinfo/storeinfo';
@@ -15,7 +16,7 @@ export const CategoryProduct = ({category}:{category: string}) => {
                 </div>
                 <div className="crit-products-container-body">
                 {
-                    inCategoryroduct.map(eachInCategoryroduct => <CompactProductCard key={eachInCategoryroduct.entid} {...eachInCategoryroduct}></CompactProductCard>)
+                    inCategoryroduct.map(eachInCategoryroduct => <Link to={"/crit/"+category+"/"+eachInCategoryroduct.entid} key={eachInCategoryroduct.entid}><CompactProductCard {...eachInCategoryroduct}></CompactProductCard></Link>)
                 }
                 </div>
             </div>

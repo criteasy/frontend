@@ -17,9 +17,15 @@ export const Homepage = () => {
         <div className='crit-home-jumbotron'>
             <div className='crit-search-bar-bg' ref={ref}>
                 <div className='categories-menu'>
-                    <Link to='/'><div className={searchContext.selectedCategory === 'All Categories' ? 'active' : ''} onClick={() => searchContext.selectCategory('All Categories')}>All</div></Link>
+                    <Link to='/'><div className={searchContext.selectedCategory === 'All Categories' ? 'active' : ''} 
+                    onClick={() => searchContext.selectCategory('All Categories') || searchContext.setGlobalCategory("/")}>All</div></Link>
                     {searchContext.categories.slice(0,5).map((category:string[]) =>
-                        <Link to={`/crit/${category[1]}`} key={category[1]}><div className={searchContext.selectedCategory === category[1] ? 'active' : ''} onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</div></Link>
+                        <Link to={`/crit/${category[1]}`} key={category[1]}>
+                            <div className={searchContext.selectedCategory === category[1] ? 'active' : ''} 
+                            onClick={() => searchContext.selectCategory(category[1]) || searchContext.setGlobalCategory(category[1])}>
+                                {category[1]}
+                            </div>
+                        </Link>
                     )}
                 </div>
                 <div className="crit-search-grp">

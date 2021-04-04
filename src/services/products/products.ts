@@ -1,12 +1,21 @@
+import { useContext } from "react";
 import { useState, useEffect } from "react";
+import { SearchContext } from "../../screen/maincontainer/maincontainer";
 import { Category } from "../../types/initialdata";
 import { Product } from "../../types/product";
 import {  API } from "../api"
 
 export const useProductsApi = (category: string) => {
     const [productData, setproductData] = useState([] as Product[]);
+    const searchContext = useContext(SearchContext)
+    
     useEffect(()=>{
-        API.get(category).then((resp: any) => {
+        API.get("/entities",{
+            params:{
+                category:searchContext.globalCategory[searchContext.globalCategory.length-2],
+                subcategory: category
+            }
+        }).then((resp: any) => {
             setproductData(resp.data);
         })
 
