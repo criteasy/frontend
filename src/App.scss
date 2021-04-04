@@ -23,6 +23,13 @@ a{
   }
 }
 
+:focus, :active {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
 @media (max-width:830px){
     .xl-only{
       display: none;

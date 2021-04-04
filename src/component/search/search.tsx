@@ -3,6 +3,7 @@ import './search.scss';
 import { BsCaretDownFill } from 'react-icons/bs';
 import { BsSearch } from 'react-icons/bs';
 import { SearchContext } from '../../screen/maincontainer/maincontainer';
+import { Link } from 'react-router-dom';
 
 export const Search = () => {
     const searchContext = useContext(SearchContext);
@@ -14,7 +15,7 @@ export const Search = () => {
                     <a onClick={() => searchContext.selectCategory("All Categories")}>All Categories</a>
                     {
                         searchContext.categories.map((category: string[]) =>
-                            <a key={category[1]} onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</a>
+                        <Link to={`/crit/${category[1]}`}  onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</Link>
                         )
                     }
                 </div>

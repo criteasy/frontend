@@ -16,7 +16,7 @@ export const TopNavbar = () => {
                 </Link>
                 {searchContext.showSearch ? <Search /> : null}
                 <div className={css(styles.userAction)}>
-                    <img src="/asset/shivam.jpeg" alt="" className={css(styles.img)}/> <a href="/profile" className={css(styles.userActionAnchor)}>Shivam Verma</a>
+                    <img src="/asset/shivam.jpeg" alt="" className={css(styles.img)}/> <a className={css(styles.userActionAnchor)+ " xl-only"} >Shivam Verma</a>
                 </div>
                 <div className={css(styles.userActionsContent)}>
                     <span className={css(styles.uacSpan)}>Shivam Verma</span>
@@ -28,7 +28,7 @@ export const TopNavbar = () => {
     </React.Fragment>
 }
 
-
+const mobileView = '@media only screen and (max-width: 830px)'
 
 const styles = StyleSheet.create({
 
@@ -64,6 +64,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignContent: "center",
         //position:"fixed",
+        [mobileView]:{
+            padding:'0 10px',
+            width: 'calc(100vw - 20px)',
+            fontSize: '10px',  
+        },
 
     },
 
@@ -76,6 +81,12 @@ const styles = StyleSheet.create({
         //backdropfilter:"blur(40px)",
 
         // position:"fixed",
+        [mobileView]: {
+            boxSizing: 'border-box',
+            margin: '0 0',
+            padding: '0 !important',
+            width: '68px'
+        }
 
     },
 
@@ -84,6 +95,9 @@ const styles = StyleSheet.create({
         //zIndex:1,
         // position:"fixed",
         //backdropfilter:"blur(40px)",
+        [mobileView]:{
+            height: '18px'
+        }
 
     },
 
@@ -127,6 +141,10 @@ const styles = StyleSheet.create({
         },
         ':link': {
             color: '#333'
+        },
+        [mobileView]:{
+            margin: '0 0px',
+            maxWidth: '30px'
         }
     },
     userActionsContent:{
@@ -144,6 +162,13 @@ const styles = StyleSheet.create({
         backdropFilter: 'blur(40px)',
         ':hover': {
             display: 'block'
+        },
+        [mobileView]:{
+            right: '5px',
+            top: '54px',
+            zIndex: 200,
+            overflow: 'auto',
+            display: 'none'
         }
     },
     uacSpan: {
@@ -159,8 +184,7 @@ const styles = StyleSheet.create({
             borderRadius: '10px'
 
         }
-    },
+    }
 });
-
 
 

@@ -30,6 +30,10 @@
             flex-flow: row nowrap;
             align-items: center;
             border: 1px solid #fcd365;
+
+            &:hover ~ .dropdown-content {
+                display: block;
+            }  
         }
         &>.dropdown-content{
             position: absolute;
@@ -54,10 +58,11 @@
                 }
 
             }
+            &:hover {
+                display: block;
+            }
         } 
-        &:hover .dropdown-content {
-            display: block;
-        }  
+        
         
         
     }
@@ -104,6 +109,9 @@
 
 
 @media(max-width: 830px){
+    div[class*=critNav] > .search-container {
+        padding: 0 10px;
+    }
     .search-container{
         &>.categories-menu{
             &>span{
