@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         cursor: 'pointer',
+        padding: '10px 0px',
         ":hover ~ div[class*='userActionsContent']": {
             display: 'block'
         }
@@ -150,7 +151,14 @@ const styles = StyleSheet.create({
         padding: '8px 12px',
         textDecoration: 'none',
         display: 'block',
-        textShadow: '1px 1px 0 #fff'
+        textShadow: '1px 1px 0 #fff',
+        cursor: "pointer",
+        transition: 'all 0.5s',
+        ':hover': {
+            backgroundColor: '#ddd',
+            borderRadius: '10px'
+
+        }
     },
 });
 

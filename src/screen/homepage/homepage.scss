@@ -1,13 +1,9 @@
 @import '../../theme.scss';
 
 .crit-home-jumbotron{
-    position:initial;
     width: 100%;
     box-sizing: border-box;
     background-color: #333;
-    // background-size: 200% 200%;
-    // z-index: -1;
-    animation: gridcoloranimation 5s ease-in 0s infinite forwards ;
     transition: all 1s ease-in-out;
     display: flex;
     justify-content: center;
@@ -30,6 +26,7 @@
             width: 100%;
             border-radius: 10px;
             margin: 0px 0 0px 0;
+            z-index: -1;
             &>a{
                 text-decoration: none;
                 &>div{
@@ -131,16 +128,3 @@
         }
     }
 }
-
-// @keyframes gridcoloranimation{
-//     0% {
-// 		background-position: 0% 50%;
-// 	}
-// 	50% {
-// 		background-position: 50% 50%;
-// 	}
-// 	100% {
-//         background-position: 0% 50%;
-    
-// 	}
-// }

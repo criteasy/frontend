@@ -8,13 +8,12 @@
     flex:3;
     font-family: 'Lato', sans-serif;
     &>.categories-menu{
-        position: relative;
         margin: 0;
         align-items: center;
         display: inline-block;
         height: 45px;
         cursor: pointer;
-        z-index: 0;
+
         &>span{
             &>span{
                 margin-right: 8px;
@@ -49,6 +48,10 @@
                 text-decoration: none;
                 display: block;
                 text-shadow: 1px 1px 0 #fff;
+                &:hover{
+                    background-color: #dadada;
+                    border-radius: 10px;
+                }
 
             }
         } 

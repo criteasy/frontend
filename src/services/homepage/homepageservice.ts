@@ -22,10 +22,10 @@ const useHomepageApi = () => {
 const filterAndArrangeCategoryProductList = (categoryProductList: CategoryProductLists) => {
     const arrangedProductList = {} as seperatedCategoryProductLists;
     categoryProductList.products.forEach(product => {
-        if (!arrangedProductList[product.categoryName]){
+        if (!arrangedProductList[product.categoryName] && product.products.length){
             arrangedProductList[product.categoryName] = {};
         }
-        arrangedProductList[product.categoryName][product.subcategoryName] = product.products.slice(0,4);
+        (()=>product.products.length?arrangedProductList[product.categoryName][product.subcategoryName] = product.products.slice(0,4): null)();
     });
     return arrangedProductList
 }
