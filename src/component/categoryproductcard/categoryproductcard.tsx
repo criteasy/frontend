@@ -13,8 +13,8 @@ export const CategoryProductCard = memo(({subCategoryName,productList}:{subCateg
             </Link>
             <div className="body">
                 {productList.map(eachProduct => 
-                    <Link to={`/crit/${eachProduct.subcategory}/${eachProduct.entid}`}>
-                        <div className="crit-sub-category-cards-background" key={eachProduct.entid}>
+                    <Link key ={eachProduct.entid} to={`/crit/${eachProduct.subcategory}/${eachProduct.entid}`}>
+                        <div className="crit-sub-category-cards-background">
                             <div className="crit-card-header">{eachProduct.ename}</div>
                             <div className="crit-card-body"><img alt="not found" src={eachProduct.imageurl || "asset/imgcomingsoon.png"}/></div>
                             <div className="crit-card-footer backdrod-blur"><div className="card-footer-action">{eachProduct.reviewcount} Reviews</div>

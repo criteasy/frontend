@@ -15,7 +15,7 @@ export const Search = () => {
                     <a onClick={() => searchContext.selectCategory("All Categories")}>All Categories</a>
                     {
                         searchContext.categories.map((category: string[]) =>
-                        <Link to={`/crit/${category[1]}`}  onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</Link>
+                        <Link key={category[1]} to={`/crit/${category[1]}`}  onClick={() => searchContext.selectCategory(category[1])}>{category[1]}</Link>
                         )
                     }
                 </div>
