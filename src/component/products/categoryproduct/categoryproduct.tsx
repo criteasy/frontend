@@ -27,7 +27,7 @@ export const CategoryProduct = ({category}:{category: string}) => {
                 </div>
                 <div className="crit-products-container-body">
                 {
-                    inCategoryroduct.map(eachInCategoryroduct => <CompactProductCard key={eachInCategoryroduct.entid} {...eachInCategoryroduct}></CompactProductCard>)
+                    inCategoryroduct.map(eachInCategoryroduct => <Link to={"/crit/"+category+"/"+eachInCategoryroduct.entid} key={eachInCategoryroduct.entid}><CompactProductCard key={eachInCategoryroduct.entid} {...eachInCategoryroduct}></CompactProductCard></Link>)
                 }
                 </div>
             </div>

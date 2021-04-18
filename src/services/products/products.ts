@@ -4,22 +4,26 @@ import { SearchContext } from "../../screen/maincontainer/maincontainer";
 import { Category } from "../../types/initialdata";
 import { Product } from "../../types/product";
 import {  API } from "../api"
-
+const cat = ["Electronics"];
+const subcat = ["Mobiles"];
 export const useProductsApi = (category: string) => {
     const [productData, setproductData] = useState([] as Product[]);
     const searchContext = useContext(SearchContext)
     
     useEffect(()=>{
-        API.get("/entities",{
+        API.get("/entities",cat.includes(category) ? {
             params:{
-                category:searchContext.globalCategory[searchContext.globalCategory.length-2],
+                category: category
+            }
+        }: {
+            params:{
                 subcategory: category
             }
         }).then((resp: any) => {
             setproductData(resp.data);
         })
 
-    },[])
+    },[category])
 
     return productData
 }
