@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         cursor: 'pointer',
         padding: '10px 0px',
-        ":hover ~ div[class*='userActionsContent']": {
+        ":hover ~ div": {
             display: 'block'
         }
     },
