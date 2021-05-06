@@ -11,7 +11,7 @@ export const useProductsApi = (category: string) => {
     const searchContext = useContext(SearchContext)
     
     useEffect(()=>{
-        API.get("/entities",cat.includes(category) ? {
+        API.get("/entities/", cat.includes(category) ? {
             params:{
                 category: category
             }
