@@ -1,8 +1,11 @@
 import React, { useContext, useRef } from 'react';
 import { Search } from '../search/search';
 import { SearchContext } from '../../screen/maincontainer/maincontainer';
-import { Link } from 'react-router-dom';
+import { Link as Links } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import  SignUp  from '../Login/loginpage';
+
+
 //import './topnavbar.scss';
 
 export const TopNavbar = () => {
@@ -11,16 +14,18 @@ export const TopNavbar = () => {
         <nav className={css(styles.navbarShadow)}></nav>
         <nav className={css(styles.navbar)}>
             <div className={css(styles.critNav)}>
-                <Link className={css(styles.critLogo)} to="/">
+                <Links className={css(styles.critLogo)} to="/">
                     <img className={css(styles.critImg)} src="/asset/criteasylogo.png" alt="" />
-                </Link>
+                </Links>
                 {searchContext.showSearch ? <Search /> : null}
                 <div className={css(styles.userAction)}>
-                    <img src="/asset/shivam.jpeg" alt="" className={css(styles.img)}/> <a className={css(styles.userActionAnchor)+ " xl-only"} >Shivam Verma</a>
+                <SignUp />
+                    <img src="/asset/shivam.jpeg" alt="" className={css(styles.img)}/> <span className={css(styles.userActionAnchor)} >Shivam Verma</span>
                 </div>
+               
                 <div className={css(styles.userActionsContent)}>
                     <span className={css(styles.uacSpan)}>Shivam Verma</span>
-                    <span className={css(styles.uacSpan)}>Logout</span>
+                    <span className={css(styles.uacSpan)}>LogIn</span>
                     <span className={css(styles.uacSpan)}>Setting</span>
                 </div>
             </div> 
