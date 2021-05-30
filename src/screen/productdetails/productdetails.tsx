@@ -5,7 +5,7 @@ import { useDefaultStates } from "../../services/critcommon/critcommon"
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { BsFileDiff, BsFileText, BsFillStarFill, BsReplyAllFill } from 'react-icons/bs';
 
-export const ProductDetails = ({match}:{match:any}) => {
+const ProductDetails = ({match}:{match:any}) => {
 
     useDefaultStates()
     return <React.Fragment>
@@ -47,3 +47,5 @@ const style = StyleSheet.create({
         
     },
 })
+
+export default ProductDetails

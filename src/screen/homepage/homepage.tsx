@@ -8,7 +8,7 @@ import { useHomepageService } from '../../services/homepage/homepageservice';
 import { SearchContext } from '../maincontainer/maincontainer';
 import { Link } from 'react-router-dom';
 
-export const Homepage = () => {
+const Homepage = () => {
     const searchContext = useContext(SearchContext);
     const ref = useFixSearchBarToTop();
     const [trendingData, catogorywiseProductList, recommendedData, 
@@ -76,6 +76,8 @@ export const Homepage = () => {
     </React.Fragment>
 
 }
+
+export default Homepage
 
 
 

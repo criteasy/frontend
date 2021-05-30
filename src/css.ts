@@ -1,4 +1,4 @@
-import { StyleSheet, css, CSSProperties, StyleDeclarationMap, StyleDeclarationValue } from 'aphrodite/no-important';
+import { StyleSheet as SS, CSSProperties, StyleDeclarationMap, StyleDeclarationValue } from 'aphrodite/no-important';
 interface DStyle {
     c: CSSProperties | StyleDeclarationMap
 }
@@ -7,7 +7,7 @@ interface ReturnStyle {c: StyleDeclarationValue }
 
 interface cacheStyle {
     [key:string]:
-        {[key:string]: StyleDeclarationValue }
+        {[key:string]: ReturnStyle }
      
 }
 
@@ -33,53 +33,53 @@ const themeLightGreyColor = '#EBECF0'
 const mobileView = '@media only screen and (max-width: 830px)'
 
 // STYLE GENRATOR functions
-export const m_rem = (len: number): ReturnStyle => {
+export const m_rem = (len: number): StyleDeclarationValue => {
     if (!(cache.m_rem && cache.m_rem[''+len]))
-        cache.m_rem = {[''+len]: StyleSheet.create({c:{margin: `${len}rem`}} as DStyle)}
-    return cache?.m_rem[''+len] as ReturnStyle
+        cache.m_rem = {[''+len]: SS.create({c:{margin: `${len}rem`}} as DStyle)}
+    return cache?.m_rem[''+len].c
 }
 
 
-export const p_rem = (len: number): ReturnStyle => {
+export const p_rem = (len: number): StyleDeclarationValue => {
     if (!(cache.p_rem && cache.p_rem[''+len]))
-        cache.p_rem = {[''+len]: StyleSheet.create({c:{padding: `${len}rem`}} as DStyle)}
-    return cache?.p_rem[''+len] as ReturnStyle
+        cache.p_rem = {[''+len]: SS.create({c:{padding: `${len}rem`}} as DStyle)}
+    return cache?.p_rem[''+len].c
 }
 
-export const m_px = (len: number): ReturnStyle => {
+export const m_px = (len: number): StyleDeclarationValue => {
     if (!(cache?.m_px && cache.m_px[''+len]))
-        cache.m_px = {[''+len]: StyleSheet.create({c:{margin: `${len*10}px`}} as DStyle)}
-    return cache?.m_px[''+len] as ReturnStyle
+        cache.m_px = {[''+len]: SS.create({c:{margin: `${len*10}px`}} as DStyle)}
+    return cache?.m_px[''+len].c
 }
 
-export const p_px = (len: number): ReturnStyle => {
+export const p_px = (len: number): StyleDeclarationValue => {
     if (!(cache?.p_px && cache.p_px[''+len]))
-        cache.p_px = {[''+len]: StyleSheet.create({c:{padding: `${len*10}px`}} as DStyle)}
-    return cache?.p_px[''+len] as ReturnStyle
+        cache.p_px = {[''+len]: SS.create({c:{padding: `${len*10}px`}} as DStyle)}
+    return cache?.p_px[''+len].c
 }
 
-export const m_d_rem = (dir: Direction, len: number): ReturnStyle => {
+export const m_d_rem = (dir: Direction, len: number): StyleDeclarationValue => {
     if (!(cache?.m_d_rem && cache.m_d_rem[dir+'_'+len]))
-        cache.m_d_rem = {[dir+'_'+len]: StyleSheet.create({c:{[`margin${dir}`]: `${len}rem`}} as DStyle)}
-    return cache?.m_d_rem[dir+'_'+len] as ReturnStyle
+        cache.m_d_rem = {[dir+'_'+len]: SS.create({c:{[`margin${dir}`]: `${len}rem`}} as DStyle)}
+    return cache?.m_d_rem[dir+'_'+len].c
 }
 
-export const p_d_rem = (dir: Direction, len: number): ReturnStyle => {
+export const p_d_rem = (dir: Direction, len: number): StyleDeclarationValue => {
     if (!(cache?.p_d_rem && cache.p_d_rem[dir+'_'+len]))
-        cache.p_d_rem = {[dir+'_'+len]: StyleSheet.create({c:{[`padding${dir}`]: `${len}rem`}} as DStyle)}
-    return cache?.p_d_rem[dir+'_'+len] as ReturnStyle
+        cache.p_d_rem = {[dir+'_'+len]: SS.create({c:{[`padding${dir}`]: `${len}rem`}} as DStyle)}
+    return cache?.p_d_rem[dir+'_'+len].c
 }
 
-export const m_d_px = (dir: Direction, len: number): ReturnStyle => {
+export const m_d_px = (dir: Direction, len: number): StyleDeclarationValue => {
     if (!(cache?.m_d_px && cache.m_d_px[dir+'_'+len]))
-        cache.m_d_px = {[dir+'_'+len]: StyleSheet.create({c:{[`margin${dir}`]: `${len}px`}} as DStyle)}
-    return cache?.m_d_px[dir+'_'+len] as ReturnStyle
+        cache.m_d_px = {[dir+'_'+len]: SS.create({c:{[`margin${dir}`]: `${len}px`}} as DStyle)}
+    return cache?.m_d_px[dir+'_'+len].c
 }
 
-export const p_d_px = (dir: Direction, len: number): ReturnStyle => {
+export const p_d_px = (dir: Direction, len: number): StyleDeclarationValue => {
     if (!(cache?.p_d_px && cache.p_d_px[dir+'_'+len]))
-        cache.p_d_px = {[dir+'_'+len]: StyleSheet.create({c:{[`padding${dir}`]: `${len}px`}} as DStyle)}
-    return cache?.p_d_px[dir+'_'+len] as ReturnStyle
+        cache.p_d_px = {[dir+'_'+len]: SS.create({c:{[`padding${dir}`]: `${len}px`}} as DStyle)}
+    return cache?.p_d_px[dir+'_'+len].c
 }
 
 
@@ -88,7 +88,7 @@ const txtColor = (color:string): CSSProperties | StyleDeclarationMap => ({color:
 
 
 
-export const cs = StyleSheet.create({
+export const cs = SS.create({
 
 
     // background color
@@ -200,7 +200,7 @@ export const cs = StyleSheet.create({
 
 });
 
-export const mcs = StyleSheet.create({
+export const mcs = SS.create({
         // width
     width100p: {
         [mobileView]:{
@@ -240,47 +240,47 @@ export const mcs = StyleSheet.create({
 
 
 
-export const border_radius = (n: number): ReturnStyle => {
+export const border_radius = (n: number): StyleDeclarationValue => {
     if (!(cache?.brad && cache.brad[''+n])) {
-        cache.brad = {[''+n]: StyleSheet.create({c:{borderRadius:`${n*10}px`}})}
+        cache.brad = {[''+n]: SS.create({c:{borderRadius:`${n*10}px`}})}
     }
-    return cache?.brad[''+n] as ReturnStyle
+    return cache?.brad[''+n].c
 
 }
 
-export const width = (size:number): ReturnStyle => {
+export const width = (size:number): StyleDeclarationValue => {
     if (!(cache?.width && cache.width[''+size])) {
-        cache.width = {[''+size]: StyleSheet.create({c:{width:`${size}rem`}})}
+        cache.width = {[''+size]: SS.create({c:{width:`${size}rem`}})}
     }
-    return cache?.width[''+size] as ReturnStyle
+    return cache?.width[''+size].c
 }
 
-export const max_width = (size:number): ReturnStyle => {
+export const max_width = (size:number): StyleDeclarationValue => {
     if (!(cache?.mxwidth && cache.mxwidth[''+size])) {
-        cache.mxwidth = {[''+size]: StyleSheet.create({c:{maxWidth:`${size}rem`}})}
+        cache.mxwidth = {[''+size]: SS.create({c:{maxWidth:`${size}rem`}})}
     }
-    return cache?.mxwidth[''+size] as ReturnStyle
+    return cache?.mxwidth[''+size].c
 }
 
-export const height = (size:number): ReturnStyle => {
+export const height = (size:number): StyleDeclarationValue => {
     if (!(cache?.height && cache.height[''+size])) {
-        cache.height = {[''+size]: StyleSheet.create({c:{height:`${size}rem`}})}
+        cache.height = {[''+size]: SS.create({c:{height:`${size}rem`}})}
     }
-    return cache?.height[''+size] as ReturnStyle
+    return cache?.height[''+size].c
 }
 
-export const max_height = (size:number): ReturnStyle => {
+export const max_height = (size:number): StyleDeclarationValue => {
     if (!(cache?.mxHeight && cache.mxHeight[''+size])) {
-        cache.mxHeight = {[''+size]: StyleSheet.create({c:{maxHeight:`${size}rem`}})}
+        cache.mxHeight = {[''+size]: SS.create({c:{maxHeight:`${size}rem`}})}
     }
-    return cache?.mxHeight[''+size] as ReturnStyle
+    return cache?.mxHeight[''+size].c
 }
 
-export const fsize = (size:number): ReturnStyle => {
+export const fsize = (size:number): StyleDeclarationValue => {
     if (!(cache?.fsize && cache.fsize[''+size])) {
-        cache.fsize = {[''+size]: StyleSheet.create({c:{fontSize:`${size}rem`}})}
+        cache.fsize = {[''+size]: SS.create({c:{fontSize:`${size}rem`}})}
     }
-    return cache?.fsize[''+size] as ReturnStyle
+    return cache?.fsize[''+size].c
 }
 
 
@@ -288,45 +288,45 @@ export const fsize = (size:number): ReturnStyle => {
 // for mobiles
 
 
-export const border_radius_ms = (n: number): ReturnStyle => {
+export const border_radius_ms = (n: number): StyleDeclarationValue => {
     if (!(cache?.brad_ms && cache.brad_ms[''+n])) {
-        cache.brad_ms = {[''+n]: StyleSheet.create({c:{[mobileView]:{borderRadius:`${n*10}px`}}})}
+        cache.brad_ms = {[''+n]: SS.create({c:{[mobileView]:{borderRadius:`${n*10}px`}}})}
     }
-    return cache?.brad_ms[''+n] as ReturnStyle
+    return cache?.brad_ms[''+n].c
 
 }
 
-export const width_ms = (size:number): ReturnStyle => {
+export const width_ms = (size:number): StyleDeclarationValue => {
     if (!(cache?.width_ms && cache.width_ms[''+size])) {
-        cache.width_ms = {[''+size]: StyleSheet.create({c:{[mobileView]:{width:`${size}rem`}}})}
+        cache.width_ms = {[''+size]: SS.create({c:{[mobileView]:{width:`${size}rem`}}})}
     }
-    return cache?.width_ms[''+size] as ReturnStyle
+    return cache?.width_ms[''+size].c
 }
 
-export const max_width_ms = (size:number): ReturnStyle => {
+export const max_width_ms = (size:number): StyleDeclarationValue => {
     if (!(cache?.mxwidth_ms && cache.mxwidth_ms[''+size])) {
-        cache.mxwidth_ms = {[''+size]: StyleSheet.create({c:{[mobileView]: {maxWidth:`${size}rem`}}})}
+        cache.mxwidth_ms = {[''+size]: SS.create({c:{[mobileView]: {maxWidth:`${size}rem`}}})}
     }
-    return cache?.mxwidth_ms[''+size] as ReturnStyle
+    return cache?.mxwidth_ms[''+size].c
 }
 
-export const height_ms = (size:number): ReturnStyle => {
+export const height_ms = (size:number): StyleDeclarationValue => {
     if (!(cache?.height_ms && cache.height_ms[''+size])) {
-        cache.height_ms = {[''+size]: StyleSheet.create({c:{[mobileView]:{height:`${size}rem`}}})}
+        cache.height_ms = {[''+size]: SS.create({c:{[mobileView]:{height:`${size}rem`}}})}
     }
-    return cache?.height_ms[''+size] as ReturnStyle
+    return cache?.height_ms[''+size].c
 }
 
-export const max_height_ms = (size:number): ReturnStyle => {
+export const max_height_ms = (size:number): StyleDeclarationValue => {
     if (!(cache?.mxHeight_ms && cache.mxHeight_ms[''+size])) {
-        cache.mxHeight_ms = {[''+size]: StyleSheet.create({c:{[mobileView]:{maxHeight:`${size}rem`}}})}
+        cache.mxHeight_ms = {[''+size]: SS.create({c:{[mobileView]:{maxHeight:`${size}rem`}}})}
     }
-    return cache?.mxHeight_ms[''+size] as ReturnStyle
+    return cache?.mxHeight_ms[''+size].c
 }
 
-export const fsize_ms = (size:number): ReturnStyle => {
+export const fsize_ms = (size:number): StyleDeclarationValue => {
     if (!(cache?.fsize_ms && cache.fsize_ms[''+size])) {
-        cache.fsize_ms = {[''+size]: StyleSheet.create({c:{[mobileView]: {fontSize:`${size}rem`}}})}
+        cache.fsize_ms = {[''+size]: SS.create({c:{[mobileView]: {fontSize:`${size}rem`}}})}
     }
-    return cache?.fsize_ms[''+size] as ReturnStyle
+    return cache?.fsize_ms[''+size].c
 }
