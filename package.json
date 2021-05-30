@@ -56,5 +56,8 @@
   "devDependencies": {
     "@types/react": "^16.14.4",
     "@types/url-join": "^4.0.0"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.4"
   }
 }
