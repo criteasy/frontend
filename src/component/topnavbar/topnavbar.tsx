@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         zindex: 1,
         boxSizing: "border-box",
         display: "block",
+        width:'100%'
 
         //overflow:"hidden",
 
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
         fontWeight: 400,
         padding: "0 50px",
         fontSize: "14px",
-        width: "calc(100vw - 100px)",
+        width: "100vw",
         display: "flex",
         flexFlow: "row nowrap",
         justifyContent: "space-between",
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         //position:"fixed",
         [mobileView]:{
             padding:'0 10px',
-            width: 'calc(100vw - 20px)',
+            width: '100vw',
             fontSize: '10px',  
         },
 
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     userAction: {
-        margin: '0 10px',
+        margin: '0 1rem',
         display: 'inline-flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
