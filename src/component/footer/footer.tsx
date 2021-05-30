@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   critfooter: {
     height: "400px",
     display: "block",
-    backgroundColor: " rgb(17, 17, 17)",
+    backgroundColor: "rgb(17, 17, 17)",
   },
 
   head: {
