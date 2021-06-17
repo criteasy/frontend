@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import { StyleSheet, css } from "aphrodite/no-important";
 
-//const rootElement = document.getElementById("root");
 const Modal = (props: any) => {
   const closeOnEscapeKeyDown = (e: any) => {
     if ((e.charCode || e.keyCode) === 27) {
@@ -63,14 +62,11 @@ const Modal = (props: any) => {
             </div>
             <div className={css(styles.box, styles.flexbox, styles.account)}>
               Sign in with
-              <img className={css(styles.sign)} src="public/asset/Google.png" />
+              <img className={css(styles.sign)} src="/asset/Google.png" />
             </div>
             <div className={css(styles.box, styles.flexbox, styles.account)}>
               Sign in with
-              <img
-                className={css(styles.sign)}
-                src="public/asset/facebook.png"
-              />
+              <img className={css(styles.sign)} src="/asset/facebook.png" />
             </div>
           </div>
         </div>
@@ -107,18 +103,6 @@ const styles = StyleSheet.create({
     gap: "10px",
   },
   modal: {
-    //display: "none" /* Hidden by default */,
-    // position: "fixed" /* Stay in place */,
-    // zindex: "1" /* Sit on top */,
-    // paddingtop: "100px" /* Location of the box */,
-    // left: "0",
-    // top: "0",
-    // width: "100%" /* Full width */,
-    // height: "100%" /* Full height */,
-    // overflow: "auto" /* Enable scroll if needed */,
-    // backgroundcolor: "rgb(0, 0, 0)" /* Fallback color */,
-    //backgroundcolor: "rgba(0, 0, 0, 0.4)", /* Black w/ opacity */
-
     position: "fixed",
     left: "0",
     top: "0",
@@ -130,28 +114,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     opacity: "unset",
     transition: "all 0.3s ease-in-out",
-    pointerEvents: "none",
   },
-  /*
-  modalcontent: {
-    width: "500px",
-    backgroundcolor: "#fff",
-    transition: "all 0.3s ease-in-out",
-    transform: "translateY(-200px)",
-  },*/
 
   box: {
     height: "30px",
-    /*background: lightgreen;*/
+
     borderRadius: "40px",
-    /*text-align: center;*/
   },
 
   dividerbox: {
     height: "15px",
-    /* background: lightgreen;*/
+
     borderRadius: "40px",
-    /*text-align: center;*/
   },
 
   boxtwo: {
@@ -173,7 +147,7 @@ const styles = StyleSheet.create({
   },
   boxsix: {
     gridColumn: "1 / 3",
-    /*text-align: center;*/
+
     fontSize: "0.9rem",
   },
   inputbox: {
@@ -237,7 +211,6 @@ const styles = StyleSheet.create({
     minHeight: "30px",
     display: "inline-flex",
     alignItems: "center",
-    /*border: 1px solid aqua;*/
   },
 
   labelspan: {
