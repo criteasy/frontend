@@ -31,10 +31,13 @@ const Modal = (props: any) => {
           <span onClick={props.onClose} className={css(styles.close)}>
             &times;
           </span>
+          {/*
           <div className={css(styles.container)}>
+            
             <div className={css(styles.box, styles.boxtwo)}>
               <span className={css(styles.account)}>Login with Email</span>
             </div>
+            
             <div className={css(styles.box, styles.boxthree)}>
               <input
                 type="text"
@@ -60,15 +63,28 @@ const Modal = (props: any) => {
               <span>Or</span>
               <hr className={css(styles.right)} />
             </div>
+          <div className={css(styles.box, styles.flexbox, styles.account)}>
+            Sign in with
+            <img className={css(styles.sign)} src="/asset/Google.png" />
+          </div>*/}
+
+          <div className={css(styles.flexcontainer)}>
+            {/*<div className={css(styles.row)}>
+             <span className={css(styles.flexitem)}>2</span>*/}
             <div className={css(styles.box, styles.flexbox, styles.account)}>
               Sign in with
               <img className={css(styles.sign)} src="/asset/Google.png" />
             </div>
+
+            {/*</div>*/}
+          </div>
+
+          {/*
             <div className={css(styles.box, styles.flexbox, styles.account)}>
               Sign in with
               <img className={css(styles.sign)} src="/asset/facebook.png" />
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     </CSSTransition>,
@@ -88,7 +104,9 @@ const styles = StyleSheet.create({
     padding: "20px",
     border: "1px solid #888",
     width: "30%",
+    height: "40%",
     borderRadius: "20px",
+    // alignItems: "center",
   },
 
   close: {
@@ -118,7 +136,7 @@ const styles = StyleSheet.create({
 
   box: {
     height: "30px",
-
+    border: "1px",
     borderRadius: "40px",
   },
 
@@ -194,13 +212,16 @@ const styles = StyleSheet.create({
 
   flexbox: {
     display: "flex",
-    width: "100%",
-    height: "100%",
+    width: "50%",
+    height: "20%",
     background: "white",
     margin: "1px",
     justifyContent: "space-evenly",
     border: "1px solid gray",
     boxShadow: "5px 5px 5px grey inset",
+    justifyItem: "center",
+    //alignItems: "center",
+    alignSelf: "center",
   },
   sign: {
     width: "20px",
@@ -216,5 +237,16 @@ const styles = StyleSheet.create({
   labelspan: {
     alignSelf: "flex-end",
     margin: "auto" /* optional */,
+  },
+
+  flexcontainer: {
+    height: "80%",
+    width: "100%",
+    padding: "0",
+    margin: "0",
+    listStyle: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
