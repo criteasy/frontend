@@ -115,6 +115,10 @@ export const cs = SS.create({
         boxShadow: `-7px -7px 12px ${shadowLightColor},  7px 7px 12px ${shadowDarkColor}`
     },
 
+    drk_b_sdw_l: {
+        boxShadow: `12px 12px 20px ${shadowDarkColor}`
+    },
+
     light_text_shadow: {
         textShadow: '1px 1px 0 #fff'
     },
@@ -254,22 +258,34 @@ export const mcs = SS.create({
         }
     },
     jstfy_content_center:{
-        justifyContent: 'center'
+        [mobileView]: {
+            justifyContent: 'center'
+        }
     },
     jstfy_content_sb:{
-        justifyContent: 'space-between'
+        [mobileView]: {
+            justifyContent: 'space-between'
+        }
     },
     align_items_center: {
-        alignItems: 'center'
+        [mobileView]: {
+            alignItems: 'center'
+        }
     },
     align_content_center: {
-        alignContent:'center'
+        [mobileView]: {
+            alignContent:'center'
+        }
     },
     flex_wrap: {
-        flexWrap: 'wrap'
+        [mobileView]: {
+            flexWrap: 'wrap'
+        }
     },
-    flex_nowrap:{
-        flexWrap: 'nowrap'
+    flex_nowrap: {
+        [mobileView]: {
+            flexWrap: 'nowrap'
+        }
     },
 
     
