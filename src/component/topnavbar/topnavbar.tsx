@@ -23,7 +23,7 @@ export const TopNavbar = () => {
           </Links>
           {searchContext.showSearch ? <Search /> : null}
           <div className={css(styles.userAction)}>
-            <SignUp />
+            {/* <SignUp /> */}
             <img
               src="/asset/shivam.jpeg"
               alt=""
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     position: "fixed",
     top: 0,
-    zindex: 1,
+    zindex: 10,
     boxSizing: "border-box",
     display: "block",
     width: "100%",

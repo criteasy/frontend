@@ -30,7 +30,7 @@ export const Maincontainer = memo(({ match }: { match: any }) => {
             </Suspense>
 
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </SearchContext.Provider>
 })
 
