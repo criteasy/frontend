@@ -78,10 +78,15 @@ const ProductDetails = ({match}:{match:any}) => {
             }>                  
                 <div className={css($.cs.bg_theme, $.cs.width100p, $.height(-100123,'', "calc(100vh - 123px)"), style.main_cont)}>
                     <div className={
-                        css($.cs.row, $.cs.flex_nowrap,$.mcs.flex_wrap, $.mcs.jstfy_content_center)
+                        css($.cs.row, $.cs.flex_nowrap, $.mcs.flex_wrap, $.cs.jstfy_content_center)
                     }>
                         <div className={
-                            css($.m_rem(5),
+                            css(
+                                $.width(30, '%'),
+                            )
+                        }>
+                            <div className={
+                            css(
                                 $.cs.neo_b_sdw_l,
                                 $.width(30),
                                 $.height(35),
@@ -90,20 +95,21 @@ const ProductDetails = ({match}:{match:any}) => {
                                 $.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center,
                             )
                         }>
-                            <div className={ css(
-                                    $.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center, 
-                                    $.cs.bg_white,
-                                    $.width(30),
-                                )}>
-                                <img className={
-                                    css($.max_height(25), $.max_width(100,'%'))
-                                } src="/asset/4.jpg" alt="" />
+                                <div className={ css(
+                                        $.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center, 
+                                        $.cs.bg_white,
+                                        $.width(30),
+                                    )}>
+                                    <img className={
+                                        css($.max_height(25), $.max_width(100,'%'))
+                                    } src="/asset/4.jpg" alt="" />
+                                </div>
                             </div>
 
                         </div>
 
                         <div className={
-                            css($.cs.width_auto, $.height(-2, '', 'auto'), $.m_d_rem('Top',5.1), $.m_d_rem('Left', 2))
+                            css($.width(70,'%'), $.height(-2, '', 'auto'), $.m_d_rem('Top',5.1))
                         }>
                             <div className={css($.cs.width100p, $.cs.ff_lato, $.fsize(2.4))}>
                                 One Plus Nord 
@@ -112,30 +118,34 @@ const ProductDetails = ({match}:{match:any}) => {
                                 css($.cs.row, $.m_d_rem('Top', 2), $.mcs.jstfy_content_sb, $.cs.ff_lato, $.fsize(1.8))
                             }>
                                 <div className={css($.m_d_rem('Left', 0), $.m_d_rem('Right',2))}>
-                                    <div className={
-                                        css(style.crx_inf, style.rating_0, anim(((5-rating)/5)*14))
-                                    }>
-                                        4.5
+                                    <div className={outerRing}>
+                                        <div className={ css($.cs.neo_b_sdw_im, style.crx_inf, style.rating_0, anim(((5-rating)/5)*14)) }>
+                                            4.5
+                                        </div>
                                     </div>
                                     <div className={css($.cs.col, $.cs.align_items_center)}>
                                         Rating
                                     </div>
                                 </div>
                                 <div className={css($.m_d_rem('Left', 2), $.m_d_rem('Right',2))}>
-                                    <div className={
-                                        css(style.crx_inf, style.reviews_1, anim(((1000-reviews)/1000)*14))
-                                    }>
-                                        900
+                                    <div className={outerRing}>
+                                        <div className={
+                                            css($.cs.neo_b_sdw_im, style.crx_inf, style.reviews_1, anim(((1000-reviews)/1000)*14))
+                                        }>
+                                            900
+                                        </div>
                                     </div>
                                     <div className={css($.cs.col, $.cs.align_items_center)}>
                                         Total&nbsp;Reviews
                                     </div>
                                 </div>
                                 <div className={css($.m_d_rem('Left', 2), $.m_d_rem('Right',0))}>
-                                    <div className={
-                                        css(style.crx_inf, style.popular_2, anim(((100-parseInt(popularity))/100)*14))
-                                    }>
-                                        78%
+                                    <div className={outerRing}>
+                                        <div className={
+                                            css($.cs.neo_b_sdw_im, style.crx_inf, style.popular_2, anim(((100-parseInt(popularity))/100)*14))
+                                        }>
+                                            78%
+                                        </div>
                                     </div>
                                     <div className={css($.cs.col, $.cs.align_items_center)}>
                                         Popularity
@@ -149,6 +159,8 @@ const ProductDetails = ({match}:{match:any}) => {
         </div>
     </React.Fragment>
 }
+
+const outerRing = css($.cs.neo_b_sdw_l, $.m_d_px('Bottom', 2.5),$.bdr_rad(10, '%'),$.p_rem(0.5), $.width(14),$.height(14), $.cs.row, $.cs.flex_wrap, $.cs.jstfy_content_center, $.cs.position_rel);
 
 
 const style = StyleSheet.create({
@@ -177,20 +189,20 @@ const style = StyleSheet.create({
     main_cont:{
         borderTop:'0.1px solid transparent',
         overflowY: 'auto',
-        padding:"0 20rem"
+        padding:"0 0rem",
+        [$.mobileView]: {
+            padding: "0 1rem"
+        }
     },
     crx_inf: {
         borderRadius:'100%',
-        width: '14rem',
-        height: '14rem',
+        width: '13rem',
+        height: '13rem',
         textAlign: 'center',
         display: 'flex',
         background: 'transparent',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: '25px',
-        boxShadow: `-12px -12px 20px #fff,  12px 12px 20px ${$.shadowDarkColor}`,
-        border: `6px solid ${$.themeLightGreyColor}`,
         position: 'relative',
         overflow: 'hidden',
         zIndex:1,
