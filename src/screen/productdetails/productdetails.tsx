@@ -82,7 +82,7 @@ const ProductDetails = ({match}:{match:any}) => {
                                 <p className={css($.fsize(1.6))}>OnePlus Nord CE 5G (Charcoal Ink, 8GB RAM, 128GB Storage)</p>
                             </div>
                             <div className={
-                                css($.cs.row, $.m_d_rem('Top', 3),  $.m_d_rem_ms('Top', 1), $.mcs.jstfy_content_sb, $.cs.ff_lato, $.fsize(1.8), $.cs.width100p)
+                                css($.cs.row, $.m_d_rem('Top', 3),  $.m_d_rem_ms('Top', 1), $.mcs.jstfy_content_center, $.cs.ff_lato, $.fsize(1.8), $.cs.width100p)
                             }>
                                 <div className={css($.m_d_rem('Left', 0), $.m_d_rem('Right',2))}>
                                     <div className={outerRing}>
@@ -115,7 +115,7 @@ const ProductDetails = ({match}:{match:any}) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className = {css($.m_d_px('Top', 3), $.cs.row, $.cs.flex_wrap, $.m_d_rem('Left', -1))}>
+                            <div className = {css($.m_d_px('Top', 3), $.cs.row, $.mcs.jstfy_content_center, $.cs.flex_wrap, $.m_d_rem('Left', -1))}>
                                 <span className={tag}>Good</span>
                                 <span className={tag}>Value for money</span>
                                 <span className={tag}>Cheap</span>
@@ -160,19 +160,19 @@ const ProductDetails = ({match}:{match:any}) => {
                         </div>
 
                         {/* section for market place and link redirections */}
-                        <div className={css($.m_d_rem('Top', 2),$.cs.col, $.cs.align_items_center, $.min_width(20,'%'), $.min_width_ms(100,'%'))}>
+                        <div className={css($.m_d_rem('Top', 2),$.cs.col, $.mcs.row, $.mcs.flex_wrap, $.cs.align_items_center, $.mcs.jstfy_content_center, $.min_width(20,'%'), $.min_width_ms(100,'%'))}>
                             <div className={ecommOutLinkCard}>
-                                <img className={css($.height(6), $.bdr_rad(1) )} src="/asset/amzn.png" alt="Amazon shop logo"/>
-                                <div className = {css($.m_px(2), $.fsize(1.6), $.p_px(0.5))}> Buy now from Amazon</div>
+                                <img className={css($.height(6), $.height(4), $.bdr_rad(1) )} src="/asset/amzn.png" alt="Amazon shop logo"/>
+                                <div className = {css($.m_px(2),$.m_px_ms(1), $.fsize(1.6), $.p_px(0.5), $.p_px_ms(0.1))}> Buy now from Amazon</div>
 
                             </div>
                             <div className={ecommOutLinkCard}>
-                                <img className={css($.height(6), $.bdr_rad(1) )} src="/asset/flpcrt.png" alt="Flipcart shop logo"/>
-                                <div className = {css($.m_px(2), $.fsize(1.6), $.p_px(0.5))}> Buy now from Flipkart</div>
+                                <img className={css($.height(6), $.height(4), $.bdr_rad(1) )} src="/asset/flpcrt.png" alt="Flipcart shop logo"/>
+                                <div className = {css($.m_px(2),$.m_px_ms(1), $.fsize(1.6), $.p_px(0.5), $.p_px_ms(0.1))}> Buy now from Flipkart</div>
                             </div>
                             <div className={ecommOutLinkCard}>
-                                <img className={css($.height(6), $.bdr_rad(1) )} src="/asset/snpdeal.png" alt="Flipcart shop logo"/>
-                                <div className = {css($.m_px(2), $.fsize(1.6), $.p_px(0.5))}> Buy now from SnapDeal</div>
+                                <img className={css($.height(6), $.height(4), $.bdr_rad(1) )} src="/asset/snpdeal.png" alt="Flipcart shop logo"/>
+                                <div className = {css($.m_px(2),$.m_px_ms(1), $.fsize(1.6), $.p_px(0.5), $.p_px_ms(0.1))}> Buy now from SnapDeal</div>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ const ProductDetails = ({match}:{match:any}) => {
     </React.Fragment>
 }
 
-const ecommOutLinkCard = css($.width(25), $.width_ms(60, '%'), $.height(20), $.bdr_rad(2), $.cs.neo_b_sdw_m, $.m_rem(3), $.m_d_rem_ms('Left',4), $.m_d_rem('Right', 4), $.cs.col, $.cs.align_items_center, $.cs.jstfy_content_center);
+const ecommOutLinkCard = css($.width(25), $.width_ms(28, '%'), $.height(20), $.height_ms(14), $.bdr_rad(2), $.cs.neo_b_sdw_m, $.m_rem(3), $.m_d_rem_ms('Left',1), $.m_d_rem_ms('Right', 1), $.cs.col, $.cs.align_items_center, $.cs.jstfy_content_center);
 const outerRing = css($.cs.neo_b_sdw_l, $.m_d_px('Bottom', 2.5),$.bdr_rad(10, '%'),$.p_rem(0.5), $.width(11),$.height(11), $.cs.row, $.cs.flex_wrap, $.cs.jstfy_content_center, $.cs.position_rel);
 const tag = css($.bdr_rad(2), $.m_rem(1), $.cs.disp_blc, $.cs.neo_b_sdw_s, $.p_rem(-1,'0.5rem 0.9rem'),$.fsize(1.5), $.cs.bg_theme)
 const style = StyleSheet.create({
