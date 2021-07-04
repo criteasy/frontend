@@ -64,16 +64,19 @@ const ProductDetails = ({match}:{match:any}) => {
                     <div className={
                         css($.cs.row, $.cs.flex_wrap, $.cs.jstfy_content_center)
                     }>
-                        <div className={ css($.m_rem(5), $.cs.neo_b_sdw_l, $.width(40), $.height(45), $.bdr_rad(2.5), $.cs.bg_theme, $.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center)}>
-                            <div className={ css($.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center, $.cs.bg_white, $.width(40))}>
-                                <img className={css($.min_height(35), $.max_height(40), $.max_width(100,'%'))} src="/asset/4.jpg" alt="" />
+                        <div>
+                            <div className={ css($.m_rem(5), $.cs.neo_b_sdw_l, $.width(40), $.height(45), $.bdr_rad(2.5), $.cs.bg_theme, $.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center)}>
+                                <div className={ css($.cs.row, $.cs.flex_nowrap, $.cs.jstfy_content_center, $.cs.align_items_center, $.cs.bg_white, $.width(40))}>
+                                    <img className={css($.min_height(35), $.max_height(40), $.max_width(100,'%'))} src="/asset/4.jpg" alt="" />
+                                </div>
                             </div>
+                            
                         </div>
                         <div className={css($.cs.width100p, $.cs.ff_lato, $.fsize(2.4), $.cs.disp_none, $.mcs.disp_blc,  $.cs.txt_align_ctr)}>
                                 One Plus Nord 
                                 <p className={css($.fsize(1.6))}>OnePlus Nord CE 5G (Charcoal Ink, 8GB RAM, 128GB Storage)</p>
                         </div>
-                        <div className={css($.cs.width_auto, $.min_width(40,'%'), $.height(-2, '', 'auto'), $.m_d_rem('Top',5.1), $.m_d_rem_ms('Top', 1))}>
+                        <div className={css($.width(40,'%'), $.mcs.width_auto, $.min_width(40,'%'), $.height(-2, '', 'auto'), $.m_d_rem('Top',5.1), $.m_d_rem_ms('Top', 1), $.m_d_rem_ms('Left',2), $.m_d_rem_ms('Right',2))}>
                             <div className={css($.cs.width100p, $.cs.ff_lato, $.fsize(2.4), $.mcs.disp_none)}>
                                 One Plus Nord 
                                 <p className={css($.fsize(1.6))}>OnePlus Nord CE 5G (Charcoal Ink, 8GB RAM, 128GB Storage)</p>
@@ -112,6 +115,48 @@ const ProductDetails = ({match}:{match:any}) => {
                                     </div>
                                 </div>
                             </div>
+                            <div className = {css($.m_d_px('Top', 3), $.cs.row, $.cs.flex_wrap, $.m_d_rem('Left', -1))}>
+                                <span className={tag}>Good</span>
+                                <span className={tag}>Value for money</span>
+                                <span className={tag}>Cheap</span>
+                                <span className={tag}>Best Quality</span>
+                                <span className={tag}>Trending</span>
+                                <span className={tag}>Great Display</span>
+                                <span className={tag}>Bad Battery Life</span>
+                                <span className={tag}>Speed</span>
+                            </div>
+                            
+                            {/* product description */}
+                            <div className={css($.cs.width100p, $.m_d_px('Top', 3))}>
+                                <div className={css($.fsize(2),$.fsize_ms(2), $.cs.width100p, $.cs.ff_lato)}>
+                                    Product&nbsp;Description
+                                </div>
+                                <table className={css($.m_d_px('Top', 1.2))}>
+                                    <tbody>
+                                        <tr>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>OS</td>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Android</td>
+                                        </tr>
+                                        <tr>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Ram</td>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Product Dimension</td>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>‎15.9 x 0.8 x 7.4 cm; 170 Grams</td>
+                                        </tr>
+                                        <tr>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Display</td>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Amoled</td>
+                                        </tr>
+                                        <tr>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>Whats in the box</td>
+                                            <td className = {css($.p_rem(0.8), $.min_width(18))}>‎OnePlus Nord CE 5G, Warp Charge 30T power adapter, Warp Type-C cable (Supports USB 2.0), Phone case, Screen protector (pre-applied), SIM tray ejector, Welcome letter, Brand sticker, Red Cable Club Membership card, Quick start guide, Safety information and warranty card, Highest SAR value & Plastic recycling card</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                         {/* section for market place and link redirections */}
@@ -139,7 +184,7 @@ const ProductDetails = ({match}:{match:any}) => {
 
 const ecommOutLinkCard = css($.width(25), $.width_ms(60, '%'), $.height(20), $.bdr_rad(2), $.cs.neo_b_sdw_m, $.m_rem(3), $.m_d_rem_ms('Left',4), $.m_d_rem('Right', 4), $.cs.col, $.cs.align_items_center, $.cs.jstfy_content_center);
 const outerRing = css($.cs.neo_b_sdw_l, $.m_d_px('Bottom', 2.5),$.bdr_rad(10, '%'),$.p_rem(0.5), $.width(11),$.height(11), $.cs.row, $.cs.flex_wrap, $.cs.jstfy_content_center, $.cs.position_rel);
-
+const tag = css($.bdr_rad(2), $.m_rem(1), $.cs.disp_blc, $.cs.neo_b_sdw_s, $.p_rem(-1,'0.5rem 0.9rem'),$.fsize(1.5), $.cs.bg_theme)
 const style = StyleSheet.create({
     aside: {
         height: 'calc(100vh - 123px)',
@@ -216,7 +261,7 @@ const style = StyleSheet.create({
             background: 'rgba(69,121,240,0.6)',
             animationDuration: '3.4s, 1200ms',
         }
-    } 
+    },
 });
 
 

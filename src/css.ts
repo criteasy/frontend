@@ -200,6 +200,9 @@ export const cs = SS.create({
 
 
     // fonts
+    m_bold: {
+        fontWeight: 600
+    },
     bold: {
         fontWeight: 'bold'
     },
@@ -210,6 +213,10 @@ export const cs = SS.create({
     disp_none: {
         display: 'none'
     },
+
+    disp_blc: {
+        display: 'block'
+    }
 
 });
 
