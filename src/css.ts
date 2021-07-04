@@ -50,6 +50,17 @@ export const p_d_rem = (dir: Direction, len: number): StyleDeclarationValue => c
 export const m_d_px = (dir: Direction, len: number): StyleDeclarationValue => cached('m_d_px', dir+'_'+len, ()=>SS.create({c:{[`margin${dir}`]: `${len*10}px`}} as DStyle));
 export const p_d_px = (dir: Direction, len: number): StyleDeclarationValue => cached('p_d_px', dir+'_'+len, ()=>SS.create({c:{[`padding${dir}`]: `${len*10}px`}} as DStyle));
 
+// mobile view
+export const m_rem_ms = (len: number): StyleDeclarationValue => cached('m_rem_ms', ''+len, ()=>SS.create({c:{[mobileView]: {margin: `${len}rem`}}} as DStyle));
+export const p_rem_ms = (len: number, val?:string): StyleDeclarationValue => cached('p_rem_ms', ''+(len || val), ()=>SS.create({c:{[mobileView]: {padding: `${val?val:len+'rem'}`}}} as DStyle));
+export const m_px_ms = (len: number): StyleDeclarationValue => cached('m_px_ms', ''+len, ()=>SS.create({c:{[mobileView]: {margin: `${len*10}px`}}} as DStyle));
+export const p_px_ms = (len: number): StyleDeclarationValue => cached('p_px_ms', ''+len, ()=>SS.create({c:{[mobileView]: {padding: `${len*10}px`}}} as DStyle));
+export const m_d_rem_ms = (dir: Direction, len: number): StyleDeclarationValue => cached('m_d_rem_ms', dir+'_'+len, ()=>SS.create({c:{[mobileView]: {[`margin${dir}`]: `${len}rem`}}} as DStyle));
+export const p_d_rem_ms = (dir: Direction, len: number): StyleDeclarationValue => cached('p_d_rem_ms', dir+'_'+len, ()=>SS.create({c:{[mobileView]: {[`padding${dir}`]: `${len}rem`}}} as DStyle));
+export const m_d_px_ms = (dir: Direction, len: number): StyleDeclarationValue => cached('m_d_px_ms', dir+'_'+len, ()=>SS.create({c:{[mobileView]: {[`margin${dir}`]: `${len*10}px`}}} as DStyle));
+export const p_d_px_ms = (dir: Direction, len: number): StyleDeclarationValue => cached('p_d_px_ms', dir+'_'+len, ()=>SS.create({c:{[mobileView]: {[`padding${dir}`]: `${len*10}px`}}} as DStyle));
+
+
 const bgColor = (color:string): CSSProperties | StyleDeclarationMap => ({backgroundColor: color})
 const txtColor = (color:string): CSSProperties | StyleDeclarationMap => ({color: color})
 
@@ -194,7 +205,11 @@ export const cs = SS.create({
     },
     ff_lato: {
         fontFamily: "'Lato', sans-serif",
-    }
+    },
+
+    disp_none: {
+        display: 'none'
+    },
 
 });
 
@@ -237,6 +252,37 @@ export const mcs = SS.create({
             display: 'none'
         }
     },
+    disp_blc: {
+        [mobileView]: {
+            display: 'block'
+        }
+    },
+
+    row: {
+        [mobileView]: {
+            display: 'flex',
+            flexDirection: 'row',
+        }
+    },
+    row_inline: {
+        [mobileView]: {
+            display:'inline-flex',
+            flexDirection: 'row'
+        }
+    },
+    col_inline: {
+        [mobileView]: {
+            display: 'inline-flex',
+            flexDirection: 'column'
+        }
+    },
+    col: {
+        [mobileView]: {
+            display: 'flex',
+            flexDirection: 'column',
+        }
+    },
+    //
     jstfy_content_center:{
         [mobileView]: {
             justifyContent: 'center'
@@ -275,6 +321,8 @@ export const max_width = (size:number, unit='rem', calc=""): StyleDeclarationVal
 export const height = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('height', calc || ''+size+unit, ()=>SS.create({c:{height:`${calc?calc:size+unit}`}}));
 export const max_height = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mxheight', calc || ''+size+unit, ()=>SS.create({c:{maxHeight:`${calc?calc:size+unit}`}}));
 export const fsize = (size:number, unit='rem'): StyleDeclarationValue => cached('fsize', ''+size+unit, ()=>SS.create({c:{fontSize:`${size+unit}`}}));
+export const min_height = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mnheight', calc || ''+size+unit, ()=>SS.create({c:{minHeight:`${calc?calc:size+unit}`}}));
+export const min_width = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mnwidth', calc || ''+size+unit, ()=>SS.create({c:{minWidth:`${calc?calc:size+unit}`}}));
 
 // for mobiles
 export const border_radius_ms = (n: number): StyleDeclarationValue => cached('brad_ms', ''+n, ()=>SS.create({c:{[mobileView]:{borderRadius:`${n*10}px`}}}));
@@ -283,3 +331,5 @@ export const max_width_ms = (size:number, unit='rem', calc=""): StyleDeclaration
 export const height_ms = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('height_ms', calc || ''+size+unit, ()=>SS.create({c:{[mobileView]:{height:`${calc?calc:size+unit}`}}}));
 export const max_height_ms = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mxHeight_ms', calc || ''+size+unit, ()=>SS.create({c:{[mobileView]:{maxHeight:`${calc?calc:size+unit}`}}}));
 export const fsize_ms = (size:number): StyleDeclarationValue => cached('fsize_ms', ''+size, ()=>SS.create({c:{[mobileView]: {fontSize:`${size}rem`}}}));
+export const min_height_ms = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mnHeight_ms', calc || ''+size+unit, ()=>SS.create({c:{[mobileView]:{minHeight:`${calc?calc:size+unit}`}}}));
+export const min_width_ms = (size:number, unit='rem', calc=""): StyleDeclarationValue => cached('mnwidth_ms', calc || ''+size+unit, ()=>SS.create({c:{[mobileView]: {minWidth:`${calc?calc:size+unit}`}}}))
